@@ -167,7 +167,7 @@
 								<div class="col-md-9 name-profile">
 									<a href="">
 										<div class="nama">
-											<h4 class="mr-2 d-lg-inline name" id=""></h4>
+											<h4 class="mr-2 d-lg-inline name" id=""><?= $comment->username ?></h4>
 										</div>
 										<p class="mr-2 d-lg-inline time"><?= $comment->date ?></p>
 									</a>
@@ -200,7 +200,7 @@
 						</div>
 					</div>
 					<div class=" container input-comment">
-						<form class="d-flex comment" role="" action="<?= base_url('user/comment') ?>" method="POST">]
+						<form class="d-flex comment" role="" action="<?= base_url('user/comment') ?>" method="POST">
 							<input type="hidden" name="id_content" id="" value="<?= $video->id_content ?>">
 							<input type="hidden" name="id_user" id="" value="<?= $user['id_user'] ?>">
 							<input class="form-control" type="text" name="komentar" id="komentar"

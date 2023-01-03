@@ -66,7 +66,7 @@ class VideoModel extends CI_Model
         // return $query->row();
         $this->db->select('*');
         $this->db->from('comments');
-        // $this->db->join('comments', 'contents.id_content = comments.id_content');
+        $this->db->join('contents', 'comments.id_content = contents.id_content');
         // $this->db->where('comments.id_content', 168);
         $this->db->join('user', 'comments.id_user = user.id_user');
         
