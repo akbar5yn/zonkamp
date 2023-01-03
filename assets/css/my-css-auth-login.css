@@ -1,0 +1,58 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+.body-background {
+	background-image: linear-gradient(to bottom left, #7f3eff, #f900d1);
+}
+.container {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* background-color: #00cb51; */
+}
+
+.container .row {
+	/* Center vertically and horizontally */
+	width: 100%;
+	height: 80%;
+}
+
+.btn-submit {
+	background-color: #00cb51;
+	border-radius: 35px;
+	transition: 0.2s;
+}
+.btn-submit:hover {
+	background-color: #02b449;
+}
+
+.btn-submit button {
+	color: white;
+}
+
+.btn-submit button:hover {
+	color: white;
+}
+.box-form .p-5 {
+	margin-top: 40px;
+}
+
+.line-btm {
+	border-color: #000000;
+}
+
+.form-control {
+	border-color: #000000;
+}
+
+.forgot-pass > a {
+	color: #7f3eff;
+}
+.regis > a {
+	color: #7f3eff;
+}
