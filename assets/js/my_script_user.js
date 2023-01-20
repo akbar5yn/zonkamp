@@ -23,6 +23,15 @@ if (flashData) {
 	});
 }
 
+// Button like
+// var likeButton = document.getElementById("like-button");
+// var likeCount = 0;
+
+// likeButton.addEventListener("click", function () {
+// 	likeCount++;
+// 	likeButton.innerHTML = "Like (" + likeCount + ")";
+// });
+
 // Modal pop up
 $(document).ready(function () {
 	$(document).on("click", ".onmodal", function (e) {

@@ -11,14 +11,12 @@
 			<!-- Navbar item beranda -->
 			<ul class="slide navbar-nav beranda me-auto mb-2 mb-lg-0">
 				<li class="nav-item beranda no-arrow">
-					<a class="btn dropdown-toggle parent" href="<?= base_url('user/index/') ?>" role="button"
-						aria-expanded="false">
+					<a class="btn dropdown-toggle parent" href="<?= base_url('user/index/') ?>" role="button" aria-expanded="false">
 						Beranda
 					</a>
 				</li>
 				<li class="nav-item kategori dropdown no-arrow">
-					<a class="btn dropdown-toggle parent" href="#" role="button" data-bs-toggle="dropdown"
-						aria-expanded="false">
+					<a class="btn dropdown-toggle parent" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Kategori
 					</a>
 					<ul class="dropdown-menu">
@@ -35,8 +33,7 @@
 					</ul>
 				</li>
 				<li class="nav-item no-arrow">
-					<a class="btn dropdown-toggle parent" href="<?= base_url('welcome/about_us/') ?>" role="button"
-						aria-expanded="false">
+					<a class="btn dropdown-toggle parent" href="<?= base_url('welcome/about_us/') ?>" role="button" aria-expanded="false">
 						About us
 					</a>
 				</li>
@@ -52,13 +49,11 @@
 			</a>
 
 			<ul class="dropdown-menu dropdown-menu-end profile-menu">
-				<li><a class="dropdown-item" href="<?= base_url('profile/index/') ?>"><i
-							class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+				<li><a class="dropdown-item" href="<?= base_url('profile/index/') ?>"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 						Profile
 					</a>
 				</li>
-				<li><a class="dropdown-item logout" href="<?= base_url('auth/logout') ?>" type="button"
-						data-bs-toggle="modal" data-bs-target="#logoutModal">
+				<li><a class="dropdown-item logout" href="<?= base_url('auth/logout') ?>" type="button" data-bs-toggle="modal" data-bs-target="#logoutModal">
 						<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Log Out
 					</a>
 				</li>
@@ -84,8 +79,7 @@
 					<h5>Konfirmasi Logout</h5>
 				</div>
 				<div class="modal-footer">
-					<a href="<?= base_url('auth/logout') ?>"><button type="button"
-							class="btn btn-logout">Ya</button></a>
+					<a href="<?= base_url('auth/logout') ?>"><button type="button" class="btn btn-logout">Ya</button></a>
 					<button type=" button" class="btn btn-cancel" data-bs-dismiss="modal">Tidak</button>
 				</div>
 			</div>
@@ -103,46 +97,33 @@
 			<div class="row people-content g-0">
 				<!-- Navbar Search -->
 				<form action="<?= base_url('user/search') ?>" method="POST" class="d-flex nav-search" role="search">
-					<input class="form-control" type="search" id="form-cari" name="keyword"
-						placeholder="Cari postingan atau pengguna" autocomplete="off" aria-label="Search">
+					<input class="form-control" type="search" id="form-cari" name="keyword" placeholder="Cari postingan" autocomplete="off" aria-label="Search">
 					<input class="btn cari" type="submit" name="submit"></input>
 				</form>
 
-				<!-- Kategori -->
-				<div class="result-kategori">
-					<ul>
-						<li>
-							<a href="">Postingan</a>
-						</li>
-						<li>
-							<a href="">Pengguna</a>
-						</li>
-					</ul>
-				</div>
 				<?php if (empty($search)) : ?>
-				<div class="no-result justify-content-center mt-5 mb-5 d-flex w-100">
-					<?php redirect('user/no_result') ?>
-				</div>
+					<div class="no-result justify-content-center mt-5 mb-5 d-flex w-100">
+						<?php redirect('user/no_result') ?>
+					</div>
 				<?php elseif ($search === null) : ?>
 
 				<?php endif ?>
 				<?php rsort($search);
-                foreach ($search as $searching) : ?>
-				<hr class="mt-3">
-				<div class="result">
-					<div class="result-desc">
-						<p class="judul-result"><?= $searching->judul ?></p>
-						<p class="desc-result"><?= $searching->desc_content ?></p>
-						<div class="result-user">
-							<img src="<?= base_url('assets/img/profile/') . $searching->image ?>" alt="user"
-								class="img-result">
-							<p class="nama-result"><?= $searching->username ?></p>
+				foreach ($search as $searching) : ?>
+					<hr class="mt-3">
+					<div class="result">
+						<div class="result-desc">
+							<p class="judul-result"><?= $searching->judul ?></p>
+							<p class="desc-result"><?= $searching->desc_content ?></p>
+							<div class="result-user">
+								<img src="<?= base_url('assets/img/profile/') . $searching->image ?>" alt="user" class="img-result">
+								<p class="nama-result"><?= $searching->username ?></p>
+							</div>
+						</div>
+						<div class="result-video">
+							<video src="<?= $searching->content_link ?>"></video>
 						</div>
 					</div>
-					<div class="result-video">
-						<video src="<?= $searching->content_link ?>"></video>
-					</div>
-				</div>
 				<?php endforeach; ?>
 
 
@@ -187,10 +168,8 @@
 									<div class="container box-coment">
 										<div class="row user-coment">
 											<div class="col-md-auto img-profile">
-												<a class="nav-link user-img" href="#" role="button"
-													aria-expanded="false">
-													<img class="img-profile rounded-circle"
-														src="<?= base_url('assets/') ?>img/undraw_profile.svg">
+												<a class="nav-link user-img" href="#" role="button" aria-expanded="false">
+													<img class="img-profile rounded-circle" src="<?= base_url('assets/') ?>img/undraw_profile.svg">
 												</a>
 											</div>
 											<div class="col-md-9 name-profile">
@@ -210,10 +189,8 @@
 									<div class="container box-coment">
 										<div class="row user-coment">
 											<div class="col-md-auto img-profile">
-												<a class="nav-link user-img" href="#" role="button"
-													aria-expanded="false">
-													<img class="img-profile rounded-circle"
-														src="<?= base_url('assets/') ?>img/undraw_profile.svg">
+												<a class="nav-link user-img" href="#" role="button" aria-expanded="false">
+													<img class="img-profile rounded-circle" src="<?= base_url('assets/') ?>img/undraw_profile.svg">
 												</a>
 											</div>
 											<div class="col-md-9 name-profile">
@@ -233,10 +210,8 @@
 								</div>
 								<div class="container input-comment">
 									<form class="d-flex comment" role="">
-										<input class="form-control" type="text" placeholder="Masukan Comment"
-											aria-label="Comment">
-										<button class="btn-comment" type="submit"><i
-												class="fas fa-paper-plane fa-fw"></i></button>
+										<input class="form-control" type="text" placeholder="Masukan Comment" aria-label="Comment">
+										<button class="btn-comment" type="submit"><i class="fas fa-paper-plane fa-fw"></i></button>
 									</form>
 								</div>
 							</div>
@@ -249,8 +224,7 @@
 		<!-- Right Content -->
 		<div class="col-sm-4 side-content">
 			<div class="btn-posting">
-				<a href="<?= base_url('upload/index/') ?>" class="btn container posting" type="submit"
-					style="font-size: 50px;">
+				<a href="<?= base_url('upload/index/') ?>" class="btn container posting" type="submit" style="font-size: 50px;">
 					<h3>Ayo Segera posting</h3>
 					<i class="fas fa-file-archive fa-fw"></i>
 				</a>
@@ -261,27 +235,27 @@
 			</div>
 			<div class="right-content ">
 				<?php foreach ($videos as $rekomen) : ?>
-				<div class="row ">
-					<div class="col-sm-6 video">
-						<video controls>
-							<source src="<?= $rekomen->content_link ?>" />
-						</video>
+					<div class="row ">
+						<div class="col-sm-6 video">
+							<video controls>
+								<source src="<?= $rekomen->content_link ?>" />
+							</video>
+						</div>
+						<div class="col-sm-6 judul">
+							<div class="judul-content">
+								<hp><?= $rekomen->judul ?></hp>
+							</div>
+							<div class="nama-date">
+								<p><?= $rekomen->username ?></p>
+								<ul>
+									<li>kategori</li>
+								</ul>
+							</div>
+							<div class="date">
+								<p class="date"><?= $rekomen->create_at ?></p>
+							</div>
+						</div>
 					</div>
-					<div class="col-sm-6 judul">
-						<div class="judul-content">
-							<hp><?= $rekomen->judul ?></hp>
-						</div>
-						<div class="nama-date">
-							<p><?= $rekomen->username ?></p>
-							<ul>
-								<li>kategori</li>
-							</ul>
-						</div>
-						<div class="date">
-							<p class="date"><?= $rekomen->create_at ?></p>
-						</div>
-					</div>
-				</div>
 				<?php endforeach; ?>
 			</div>
 		</div>

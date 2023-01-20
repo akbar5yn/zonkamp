@@ -8,7 +8,7 @@ class User extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
-        $this->load->model('videoModel');
+        $this->load->model('VideoModel');
         $this->load->model('KategoriContent');
     }
 
@@ -20,13 +20,11 @@ class User extends CI_Controller
         }
         $data['title'] = 'Zona Kampus';
 
-        // $data['videos'] = $this->videoModel->getAllVideos();
-        // $data['comments'] = $this->videoModel->getComment($id_content);
-        // $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data_base = [
-            'videos' => $this->videoModel->getAllVideos(),
-            'comments' => $this->videoModel->getComment(),
+            'like' => $this->VideoModel->getLike(),
+            'videos' => $this->VideoModel->getAllVideos(),
             'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
+            'comments' => $this->VideoModel->getComment(),
         ];
 
         $this->load->view('templates/templates_user/user_header', $data);
@@ -61,6 +59,9 @@ class User extends CI_Controller
     }
     public function no_result()
     {
+        if ($this->session->userdata('email') == false) {
+            redirect('auth');
+        }
         if (empty($_POST['keyword'])) {
             // $this->load->view('user/no_result');
             $data['keyword'] = null;
@@ -81,8 +82,10 @@ class User extends CI_Controller
         $this->load->view('templates/templates_user/user_footer');
     }
 
-    public function comment(){
-        
+    // Input comment
+    public function comment()
+    {
+
         $this->form_validation->set_rules('komentar', 'Comment', 'required|trim');
 
         if ($this->form_validation->run() == false) {
@@ -102,30 +105,34 @@ class User extends CI_Controller
                 'id_user' => $this->input->post('id_user', true),
                 'komentar' => $this->input->post('komentar', true),
             ];
+
             $this->db->insert('comments', $coment);
             redirect('user/index');
         }
     }
 
-    public function tampilComment($id_content){
-        // // $user = $this->->get_user($id_comment);
-        // $comments = $this->videoModel->getComment($id_comment);
-        // 'getDataVideo' => $this->videoModel->getVideo($id_content),
+    public function like()
+    {
+        $this->form_validation->set_rules('id_user', 'user_id', 'required|trim');
 
-        // // Simpan data ke dalam session
-        // $this->session->set_userdata('comment_id', $comments->id_content);
-        // // $this->session->set_userdata('name', $comments->name);
-        $data['title'] = 'Zona Kampus';
+        if ($this->form_validation->run() == false) {
+            $data['title'] = 'Zona Kampus';
 
-        $data_base = [
-            'videos' => $this->videoModel->getAllVideos(),
-            'comments' => $this->videoModel->getComment($id_content),
-            // 'comments' => $this->videoModel->getComment(),
-            'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
-        ];
+            $data_base = [
+                'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
+            ];
 
-        $this->load->view('templates/templates_user/user_header', $data);
-        $this->load->view('user/index', $data_base);
-        $this->load->view('templates/templates_user/user_footer');
+            $this->load->view('templates/templates_user/user_header', $data);
+            $this->load->view('user/index', $data_base);
+            $this->load->view('templates/templates_user/user_footer');
+        } else {
+            $like = [
+                'id_content' => $this->input->post('id_content', true),
+                'id_user' => $this->input->post('id_user', true),
+            ];
+
+            $this->db->insert('likes', $like);
+            redirect('user');
+        }
     }
 }

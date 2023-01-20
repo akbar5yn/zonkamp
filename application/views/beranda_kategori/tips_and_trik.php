@@ -1,7 +1,7 @@
 <!-- Halaman Utama -->
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg nav-background">
+<nav class="navbar navbar-expand-lg nav-background sticky-top">
 
 	<div class="container-fluid">
 		<a class="navbar-brand logo d-flex mx-0" href="#">
@@ -11,14 +11,12 @@
 			<!-- Navbar item beranda -->
 			<ul class="slide navbar-nav beranda me-auto mb-2 mb-lg-0">
 				<li class="nav-item beranda no-arrow">
-					<a class="btn dropdown-toggle parent" href="<?= base_url('user/index/') ?>" role="button"
-						aria-expanded="false">
+					<a class="btn dropdown-toggle parent" href="<?= base_url('user/index/') ?>" role="button" aria-expanded="false">
 						Beranda
 					</a>
 				</li>
 				<li class="nav-item kategori dropdown no-arrow">
-					<a class="btn dropdown-toggle parent" href="#" role="button" data-bs-toggle="dropdown"
-						aria-expanded="false">
+					<a class="btn dropdown-toggle parent" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Kategori
 					</a>
 					<ul class="dropdown-menu">
@@ -35,8 +33,7 @@
 					</ul>
 				</li>
 				<li class="nav-item no-arrow">
-					<a class="btn dropdown-toggle parent" href="<?= base_url('welcome/about_us/') ?>" role="button"
-						aria-expanded="false">
+					<a class="btn dropdown-toggle parent" href="<?= base_url('welcome/about_us/') ?>" role="button" aria-expanded="false">
 						About us
 					</a>
 				</li>
@@ -48,10 +45,8 @@
 			</ul>
 			<!-- Navbar Search -->
 			<form action="<?= base_url('user/search') ?>" method="POST" class="d-flex nav-search" role="search">
-				<input class="form-control" type="search" name="keyword" placeholder="Cari postingan atau pengguna"
-					autocomplete="off" aria-label="Search">
-				<button class="btn" type="submit" name="submit" value="Cari"><i
-						class="fas fa-search fa-fw"></i></button>
+				<input class="form-control" type="search" name="keyword" placeholder="Cari postingan atau pengguna" autocomplete="off" aria-label="Search">
+				<button class="btn" type="submit" name="submit" value="Cari"><i class="fas fa-search fa-fw"></i></button>
 			</form>
 		</div>
 
@@ -63,13 +58,11 @@
 			</a>
 
 			<ul class="dropdown-menu dropdown-menu-end profile-menu">
-				<li><a class="dropdown-item" href="<?= base_url('profile/index/') ?>"><i
-							class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+				<li><a class="dropdown-item" href="<?= base_url('profile/index/') ?>"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 						Profile
 					</a>
 				</li>
-				<li><a class="dropdown-item logout" href="<?= base_url('auth/logout') ?>" type="button"
-						data-bs-toggle="modal" data-bs-target="#logoutModal">
+				<li><a class="dropdown-item logout" href="<?= base_url('auth/logout') ?>" type="button" data-bs-toggle="modal" data-bs-target="#logoutModal">
 						<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Log Out
 					</a>
 				</li>
@@ -113,8 +106,7 @@
 						<h5>Konfirmasi Logout</h5>
 					</div>
 					<div class="modal-footer">
-						<a href="<?= base_url('auth/logout') ?>"><button type="button"
-								class="btn btn-logout">Ya</button></a>
+						<a href="<?= base_url('auth/logout') ?>"><button type="button" class="btn btn-logout">Ya</button></a>
 						<button type=" button" class="btn btn-cancel" data-bs-dismiss="modal">Tidak</button>
 					</div>
 				</div>
@@ -127,101 +119,95 @@
 				<!-- <?= $this->session->flashdata('success'); ?> -->
 
 				<?php rsort($kategori);
-                foreach ($kategori as $category) : ?>
-				<div class="row people-content g-0">
-					<!-- Content User -->
-					<div class="contaier user-parent">
-						<div class="row user">
-							<div class="col-md-auto img-profile">
-								<a class="nav-link user-img" href="#" role="button" aria-expanded="false">
-									<img class="img-profile rounded-circle"
-										src="<?= base_url('assets/img/profile/') . $category->image ?>">
-								</a>
-							</div>
-							<div class="col-md-9 name-profile">
-								<a href="">
-									<div class="nama">
-										<h4 class="mr-2 d-lg-inline name"><?= $category->username ?></h4>
-									</div>
-									<p class="mr-2 d-lg-inline time"><?= $category->create_at ?></p>
-								</a>
-							</div>
-						</div>
-					</div>
-					<!-- Content Video -->
-					<div class="col-md-7 content-parent">
-						<div class="container video">
-							<video controls>
-								<source src="<?= $category->content_link ?>">
-							</video>
-						</div>
-					</div>
-					<!-- Deskripsi -->
-					<div class="col-md-5 content-coment">
-						<h5 class="card-title"><?= $category->judul ?></h5>
-						<p class="desc"><?= $category->desc_content ?></p>
-						<!-- Coment user -->
-						<div class="card-body">
-							<div class="container box-coment">
-								<div class="row user-coment">
-									<div class="col-md-auto img-profile">
-										<a class="nav-link user-img" href="#" role="button" aria-expanded="false">
-											<img class="img-profile rounded-circle"
-												src="<?= base_url('assets/') ?>img/undraw_profile.svg">
-										</a>
-									</div>
-									<div class="col-md-9 name-profile">
-										<a href="">
-											<div class="nama">
-												<h4 class="mr-2 d-lg-inline name"><?= $user['username']; ?></h4>
-											</div>
-											<p class="mr-2 d-lg-inline time">5 menit yang lalu</p>
-										</a>
-									</div>
+				foreach ($kategori as $category) : ?>
+					<div class="row people-content g-0">
+						<!-- Content User -->
+						<div class="contaier user-parent">
+							<div class="row user">
+								<div class="col-md-auto img-profile">
+									<a class="nav-link user-img" href="#" role="button" aria-expanded="false">
+										<img class="img-profile rounded-circle" src="<?= base_url('assets/img/profile/') . $category->image ?>">
+									</a>
 								</div>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab obcaecati, necessitatibus
-									quas nulla quam ea eveniet quia reprehenderit unde deleniti laudantium voluptas
-									accusamus nesciunt dolorum possimus, nihil dolores! Ea, cum.</p>
-							</div>
-							<div class="container box-coment">
-								<div class="row user-coment">
-									<div class="col-md-auto img-profile">
-										<a class="nav-link user-img" href="#" role="button" aria-expanded="false">
-											<img class="img-profile rounded-circle"
-												src="<?= base_url('assets/') ?>img/undraw_profile.svg">
-										</a>
-									</div>
-									<div class="col-md-9 name-profile">
-										<a href="">
-											<div class="nama">
-												<h4 class="mr-2 d-lg-inline name"><?= $user['username']; ?></h4>
-											</div>
-											<p class="mr-2 d-lg-inline time">5 menit yang lalu</p>
-										</a>
-									</div>
+								<div class="col-md-9 name-profile">
+									<a href="">
+										<div class="nama">
+											<h4 class="mr-2 d-lg-inline name"><?= $category->username ?></h4>
+										</div>
+										<p class="mr-2 d-lg-inline time"><?= $category->create_at ?></p>
+									</a>
 								</div>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab obcaecati, necessitatibus
-									quas nulla quam ea eveniet quia reprehenderit unde deleniti laudantium voluptas
-									accusamus nesciunt dolorum possimus, nihil dolores! Ea, cum.</p>
 							</div>
 						</div>
-						<div class="container input-comment">
-							<form class="d-flex comment" role="">
-								<input class="form-control" type="text" placeholder="Masukan Comment"
-									aria-label="Comment">
-								<button class="btn-comment" type="submit"><i
-										class="fas fa-paper-plane fa-fw"></i></button>
-							</form>
+						<!-- Content Video -->
+						<div class="col-md-7 content-parent">
+							<div class="container video">
+								<video controls>
+									<source src="<?= $category->content_link ?>">
+								</video>
+							</div>
+						</div>
+						<!-- Deskripsi -->
+						<div class="col-md-5 content-coment">
+							<h5 class="card-title"><?= $category->judul ?></h5>
+							<p class="desc"><?= $category->desc_content ?></p>
+							<!-- Coment user -->
+							<div class="card-body">
+								<div class="container box-coment">
+									<div class="row user-coment">
+										<div class="col-md-auto img-profile">
+											<a class="nav-link user-img" href="#" role="button" aria-expanded="false">
+												<img class="img-profile rounded-circle" src="<?= base_url('assets/') ?>img/undraw_profile.svg">
+											</a>
+										</div>
+										<div class="col-md-9 name-profile">
+											<a href="">
+												<div class="nama">
+													<h4 class="mr-2 d-lg-inline name"><?= $user['username']; ?></h4>
+												</div>
+												<p class="mr-2 d-lg-inline time">5 menit yang lalu</p>
+											</a>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab obcaecati, necessitatibus
+										quas nulla quam ea eveniet quia reprehenderit unde deleniti laudantium voluptas
+										accusamus nesciunt dolorum possimus, nihil dolores! Ea, cum.</p>
+								</div>
+								<div class="container box-coment">
+									<div class="row user-coment">
+										<div class="col-md-auto img-profile">
+											<a class="nav-link user-img" href="#" role="button" aria-expanded="false">
+												<img class="img-profile rounded-circle" src="<?= base_url('assets/') ?>img/undraw_profile.svg">
+											</a>
+										</div>
+										<div class="col-md-9 name-profile">
+											<a href="">
+												<div class="nama">
+													<h4 class="mr-2 d-lg-inline name"><?= $user['username']; ?></h4>
+												</div>
+												<p class="mr-2 d-lg-inline time">5 menit yang lalu</p>
+											</a>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab obcaecati, necessitatibus
+										quas nulla quam ea eveniet quia reprehenderit unde deleniti laudantium voluptas
+										accusamus nesciunt dolorum possimus, nihil dolores! Ea, cum.</p>
+								</div>
+							</div>
+							<div class="container input-comment">
+								<form class="d-flex comment" role="">
+									<input class="form-control" type="text" placeholder="Masukan Comment" aria-label="Comment">
+									<button class="btn-comment" type="submit"><i class="fas fa-paper-plane fa-fw"></i></button>
+								</form>
+							</div>
 						</div>
 					</div>
-				</div>
 				<?php endforeach; ?>
 			</div>
 			<!-- Right Content -->
 			<div class="col-sm-4 side-content">
 				<div class="btn-posting">
-					<a href="<?= base_url('upload/index/') ?>" class="btn container posting" type="submit"
-						style="font-size: 50px;">
+					<a href="<?= base_url('upload/index/') ?>" class="btn container posting" type="submit" style="font-size: 50px;">
 						<h3>Ayo Segera posting</h3>
 						<i class="fas fa-file-archive fa-fw"></i>
 					</a>

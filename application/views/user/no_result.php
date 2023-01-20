@@ -97,21 +97,10 @@
             <div class="row people-content g-0">
                 <!-- Navbar Search -->
                 <form action="<?= base_url('user/search') ?>" method="POST" class="d-flex nav-search" role="search">
-                    <input class="form-control" type="search" id="form-cari" name="keyword" placeholder="Cari postingan atau pengguna" autocomplete="off" aria-label="Search">
+                    <input class="form-control" type="search" id="form-cari" name="keyword" placeholder="Cari postingan" autocomplete="off" aria-label="Search">
                     <input class="btn cari" type="submit" name="submit"></input>
                 </form>
 
-                <!-- Kategori -->
-                <div class="result-kategori">
-                    <ul>
-                        <li>
-                            <a href="">Postingan</a>
-                        </li>
-                        <li>
-                            <a href="">Pengguna</a>
-                        </li>
-                    </ul>
-                </div>
                 <?php if (empty($search)) : ?>
                     <?php redirect('user/no_result') ?>
                 <?php endif ?>

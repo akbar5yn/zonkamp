@@ -207,7 +207,8 @@ nav {
 
 .list-kategori .active {
 	color: white;
-	background-color: #f900d1;
+	/* background-color: #f900d1; */
+	background-color: rgba(208, 44, 237, 0.7);
 	padding: 5px 10px;
 	border-radius: 50px;
 }
@@ -406,7 +407,7 @@ nav {
 .side-content {
 	/* background-color: #fefdff; */
 	border-radius: 10px;
-	padding: 20px 30px;
+	padding: 0px 30px;
 }
 
 .container-fluid .row .btn-posting {
@@ -612,7 +613,7 @@ nav {
 @media screen and (max-width: 780px) {
 	/* main content */
 	.content-kategori {
-		margin-top: 12%;
+		margin-top: -1%;
 	}
 
 	.kolom-content .people-content .user-parent .user .img-profile {
@@ -685,5 +686,18 @@ nav {
 	.right-content .row .video > video {
 		width: 90%;
 		height: 100%;
+	}
+	.list-kategori {
+		display: flex;
+		flex-direction: column;
+		/* justify-content: center; */
+		text-align: center;
+		justify-content: space-evenly;
+		font-weight: 800;
+		font-size: 18px;
+	}
+	.list-kategori > li {
+		list-style: none;
+		padding: 5px;
 	}
 }

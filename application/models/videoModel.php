@@ -23,6 +23,7 @@ class VideoModel extends CI_Model
         $this->db->select();
         $this->db->from('contents');
         $this->db->join('user', 'contents.id_user = user.id_user');
+        // $this->db->join('comments', 'contents.id_content = comments.id_content', 'left');
         return $this->db->get()->result();
     }
 
@@ -61,30 +62,26 @@ class VideoModel extends CI_Model
         // return $this->db->get('contents')->row_array();
     }
 
-    public function getComment(){
-        // $query = $this->db->get_where('comments', array('id_comment' => $id_comment));
-        // return $query->row();
+    public function getComment()
+    {
+
         $this->db->select('*');
         $this->db->from('comments');
-        $this->db->join('contents', 'comments.id_content = contents.id_content');
-        // $this->db->where('comments.id_content', 168);
         $this->db->join('user', 'comments.id_user = user.id_user');
-        
         return $this->db->get()->result();
     }
+    public function getLike()
+    {
+        $this->db->select_sum('likes.id_content');
+        $this->db->from('likes');
+        // $this->db->join('user', 'likes.id_user = user.id_user');
+        $this->db->where('likes.id_content', 'likes.id_content');
+        $ttllike = $this->db->get('');
 
-    // public function getComment(){
-    //     $this->db->where('id_content');
-    //     $query = $this->db->get('comments');
-    //     return $query->result_array();
-    // }
-
-    // public function tampilComment(){
-    //     // $this->db->select('*');
-    //     // $this->db->from('contents');
-    //     $this->db->join('comments', 'contents.id_content = comments.id_content');
-    //     // $this->db->join('user', 'comments.id_user = user.id_user');
-    //     $this->db->where('comments.id_content', $this->session->userdata('id_content'));
-    //     return $this->db->get('contents')->result();
-    // }
+        if ($ttllike->num_rows() > 0) {
+            return $ttllike->row()->id_content;
+        } else {
+            return 0;
+        }
+    }
 }

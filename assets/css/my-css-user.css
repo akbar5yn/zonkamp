@@ -16,6 +16,7 @@ body {
 nav {
 	margin-bottom: 23px;
 }
+
 .container-fluid .logo {
 	font-size: 24px;
 	font-weight: 800;
@@ -77,6 +78,7 @@ nav {
 	color: white;
 	background-color: rgb(97, 134, 255);
 }
+
 .navbar .container-fluid button:hover {
 	background-color: #f900d1;
 }
@@ -95,6 +97,7 @@ nav {
 	background-color: #7f3eff;
 	box-shadow: 5px 10px 8px rgb(0 0 0 / 0.2);
 }
+
 .profile ul li a {
 	color: white;
 }
@@ -149,18 +152,21 @@ nav {
 .menu-toggle span:nth-child(2) {
 	transform-origin: 0 0;
 }
+
 .menu-toggle span:nth-child(4) {
 	transform-origin: 0 100%;
 }
 
-.menu-toggle input:checked ~ span:nth-child(2) {
+.menu-toggle input:checked~span:nth-child(2) {
 	background-color: white;
 	transform: rotate(45deg) translate(-1px, -1px);
 }
-.menu-toggle input:checked ~ span:nth-child(3) {
+
+.menu-toggle input:checked~span:nth-child(3) {
 	transform: scale(0);
 }
-.menu-toggle input:checked ~ span:nth-child(4) {
+
+.menu-toggle input:checked~span:nth-child(4) {
 	background-color: white;
 	transform: rotate(-45deg) translate(-1px, 0);
 }
@@ -183,9 +189,11 @@ nav {
 .container-fluid .row .kolom-content .people-content .user img {
 	width: 50px;
 }
+
 .container-fluid .row .kolom-content .people-content .name {
 	font-size: 16px;
 }
+
 .container-fluid .row .kolom-content .people-content .time {
 	color: rgb(104, 104, 104);
 	font-weight: 300;
@@ -222,20 +230,21 @@ nav {
 	align-items: center;
 }
 
-.modal-footer > button {
+.modal-footer>button {
 	color: white;
 	width: 94px;
 }
 
-.modal-footer > button:hover {
+.modal-footer>button:hover {
 	color: white;
 }
 
-.modal-footer > a {
+.modal-footer>a {
 	text-decoration: none;
 	color: white;
 }
-.modal-footer > a > button {
+
+.modal-footer>a>button {
 	text-decoration: none;
 	color: white;
 	width: 94px;
@@ -261,7 +270,9 @@ nav {
 .content-coment h5 {
 	font-weight: bolder;
 	cursor: pointer;
+	font-size: 18px;
 }
+
 .container-fluid .row .content-coment {
 	padding: 10px;
 }
@@ -274,19 +285,10 @@ nav {
 
 .container-fluid .row .content-coment .card-body .box-coment {
 	border-bottom: solid 1px rgb(199, 199, 199);
-	margin-top: 1%;
+	margin-top: 4%;
 }
 
-.container-fluid
-	.row
-	.kolom-content
-	.people-content
-	.content-coment
-	.box-coment
-	.user-coment
-	.img-profile
-	a
-	img {
+.container-fluid .row .kolom-content .people-content .content-coment .box-coment .user-coment .img-profile a img {
 	width: 35px;
 }
 
@@ -301,14 +303,7 @@ nav {
 	padding: 10px 0;
 }
 
-.kolom-content
-	.people-content
-	.content-coment
-	.card-body
-	.box-coment
-	.user-coment
-	.name-profile
-	.time {
+.kolom-content .people-content .content-coment .card-body .box-coment .user-coment .name-profile .time {
 	color: #7f3eff;
 }
 
@@ -320,6 +315,7 @@ nav {
 	/* overflow-y: hidden; */
 	/* z-index: 1; */
 }
+
 .container-fluid .row .content-parent .video video {
 	width: 100%;
 	height: 100%;
@@ -332,13 +328,23 @@ nav {
 
 .input-comment {
 	display: flex;
-	justify-content: center;
+	justify-content: end;
 	align-items: center;
 }
 
 .input-comment .comment {
-	padding-top: 10px;
+	/* padding-top: 10px; */
 	width: 80%;
+}
+
+.like-section {
+	display: flex;
+	align-items: center;
+}
+
+.like-section span {
+	color: #000000;
+	font-weight: 300;
 }
 
 .input-comment .comment input {
@@ -371,6 +377,7 @@ nav {
 	padding: 0px 50px;
 	display: flex;
 }
+
 .container-fluid .row .posting {
 	background-color: #ffffff;
 	text-align: center;
@@ -380,16 +387,17 @@ nav {
 	/* margin-top: 23px; */
 }
 
-.container-fluid .row .posting > h3 {
+.container-fluid .row .posting>h3 {
 	font-size: 20px;
 }
 
-.posting > a {
+.posting>a {
 	text-decoration: none !important;
 }
 
-.container-fluid .row .posting i {
+.container-fluid .row .posting img {
 	color: #7f3eff;
+	height: 60px;
 }
 
 .container-fluid .row .rekomendasi {
@@ -406,7 +414,7 @@ nav {
 	margin-top: 20px;
 }
 
-.right-content .row .video > video {
+.right-content .row .video>video {
 	width: 100%;
 }
 
@@ -430,6 +438,7 @@ nav {
 	margin-bottom: -10px;
 	color: #848484;
 	font-weight: 300;
+	/* justify-content: center; */
 }
 
 .container-fluid .row .right-content .row .judul .date {
@@ -444,6 +453,11 @@ nav {
 	cursor: pointer;
 	margin-top: 10px;
 } */
+
+/* style icon */
+.fa-thumbs-up {
+	font-weight: 500;
+}
 
 /* Responsive */
 @media screen and (max-width: 1220px) {
@@ -462,27 +476,17 @@ nav {
 		display: none;
 	}
 
-	.kolom-content
-		.people-content
-		.content-coment
-		.card-body
-		.box-coment
-		.user-coment
-		.img-profile {
+	.kolom-content .people-content .content-coment .card-body .box-coment .user-coment .img-profile {
 		width: auto;
 	}
-	.kolom-content
-		.people-content
-		.content-coment
-		.card-body
-		.box-coment
-		.user-coment
-		.name-profile {
+
+	.kolom-content .people-content .content-coment .card-body .box-coment .user-coment .name-profile {
 		width: auto;
 	}
 }
 
 @media screen and (max-width: 990px) {
+
 	/* main content */
 	.container-fluid .row .kolom-content .people-content {
 		margin: 10px;
@@ -491,29 +495,20 @@ nav {
 	.container-fluid .row .btn-posting {
 		padding: 0;
 	}
+
 	.container-fluid .row .btn-posting .posting h3 {
 		font-size: 20px;
 	}
+
 	.container-fluid .row .btn-posting .posting i {
 		font-size: 40px;
 	}
 
-	.kolom-content
-		.people-content
-		.content-coment
-		.card-body
-		.box-coment
-		.user-coment
-		.img-profile {
+	.kolom-content .people-content .content-coment .card-body .box-coment .user-coment .img-profile {
 		width: auto;
 	}
-	.kolom-content
-		.people-content
-		.content-coment
-		.card-body
-		.box-coment
-		.user-coment
-		.name-profile {
+
+	.kolom-content .people-content .content-coment .card-body .box-coment .user-coment .name-profile {
 		width: auto;
 	}
 
@@ -536,10 +531,12 @@ nav {
 		display: flex;
 		z-index: 1;
 	}
+
 	.profile {
 		right: 60px;
 		z-index: 1;
 	}
+
 	.collapse:not(.show) {
 		display: block;
 		position: absolute;
@@ -554,6 +551,7 @@ nav {
 		padding-bottom: 15px;
 		border-radius: 10px;
 	}
+
 	.collapse .beranda {
 		margin-top: 40px;
 	}
@@ -561,6 +559,7 @@ nav {
 	.collapse.slide {
 		transform: translateX(0);
 	}
+
 	.collapse form {
 		margin-left: 10px;
 	}
@@ -572,39 +571,32 @@ nav {
 
 /* Mobile */
 @media screen and (max-width: 780px) {
+
 	/* main content */
 	.kolom-content .people-content .user-parent .user .img-profile {
 		width: auto;
 	}
+
 	.kolom-content .people-content .user-parent .user .name-profile {
 		width: auto;
 	}
 
-	.kolom-content
-		.people-content
-		.content-coment
-		.card-body
-		.box-coment
-		.user-coment
-		.img-profile {
+	.kolom-content .people-content .content-coment .card-body .box-coment .user-coment .img-profile {
 		width: auto;
 	}
-	.kolom-content
-		.people-content
-		.content-coment
-		.card-body
-		.box-coment
-		.user-coment
-		.name-profile {
+
+	.kolom-content .people-content .content-coment .card-body .box-coment .user-coment .name-profile {
 		width: auto;
 	}
 
 	.container-fluid .row .btn-posting {
 		padding: 0;
 	}
+
 	.container-fluid .row .btn-posting .posting h3 {
 		font-size: 20px;
 	}
+
 	.container-fluid .row .btn-posting .posting i {
 		font-size: 40px;
 	}
@@ -621,6 +613,7 @@ nav {
 		padding-bottom: 15px;
 		border-radius: 10px;
 	}
+
 	.collapse .beranda {
 		margin-top: 40px;
 	}
@@ -628,10 +621,10 @@ nav {
 	.right-content {
 		display: flex;
 		flex-direction: column;
-		text-align: center;
 		align-items: center;
 		justify-content: center;
 	}
+
 	.right-content .row {
 		width: 90%;
 	}
@@ -645,7 +638,7 @@ nav {
 		justify-content: center;
 	}
 
-	.right-content .row .video > video {
+	.right-content .row .video>video {
 		width: 90%;
 		height: 100%;
 	}
@@ -673,11 +666,11 @@ nav {
 	font-size: large;
 }
 
-.about-us > a {
+.about-us>a {
 	text-decoration: none;
 }
 
-.btn-about-us > i {
+.btn-about-us>i {
 	margin-right: 10px;
 }
 
@@ -694,32 +687,9 @@ nav {
 	margin-left: 25px;
 	padding: 9px 38px;
 }
+
 .cari:hover {
 	border-color: #7f3eff;
-}
-
-.result-kategori {
-	margin-top: 20px;
-}
-
-.result-kategori > ul {
-	display: flex;
-	padding: 0;
-	padding-left: 5px;
-	margin-bottom: 0;
-}
-
-.result-kategori > ul > li {
-	list-style: none;
-	padding-right: 20px;
-}
-
-.result-kategori > ul > li > a {
-	font-weight: 800;
-	font-size: 16px;
-	line-height: 19px;
-
-	color: #848484;
 }
 
 .result {
@@ -737,6 +707,7 @@ nav {
 	line-height: 19px;
 	color: #000000;
 }
+
 .desc-result {
 	font-weight: 600;
 	font-size: 12px;
